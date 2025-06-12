@@ -29,7 +29,7 @@ const TV_VIDEO_OUTPUT: VideoOutput = VideoOutput {
 };
 
 const DESKTOP_AUDIO_SINK: &str = "alsa_output.pci-0000_0a_00.4.analog-stereo";
-const TV_AUDIO_SINK: &str = "alsa_output.pci-0000_07_00.1.hdmi-stereo";
+const TV_AUDIO_SINK: &str = "alsa_output.pci-0000_08_00.1.hdmi-stereo";
 const TV_SCALE: &str = "2.0";
 
 macro_rules! cmd {
