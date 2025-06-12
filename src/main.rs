@@ -72,6 +72,10 @@ struct State {
 
 impl State {
     fn load() -> Self {
+        if !fs::exists(STATE_FILE_PATH).unwrap() {
+            Self::init()
+        }
+
         let string = fs::read_to_string(STATE_FILE_PATH).unwrap();
 
         let tv = match string.lines().next().unwrap() {
