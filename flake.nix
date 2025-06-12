@@ -29,6 +29,7 @@
         {
           packages = {
             tv = pkgs.callPackage ./nix/packages/tv.nix { inherit inputs; };
+            default = self'.packages.tv;
           };
           devShells = {
             default = pkgs.mkShell {

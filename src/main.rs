@@ -12,31 +12,29 @@ const STATE_FILE_PATH: &str = "/tmp/tv.state";
 const DESKTOP_VIDEO_OUTPUTS: &[&VideoOutput] = &[
     &VideoOutput {
         output: "DP-1",
-        workspaces: &["VR", "Web-DP1"],
+        workspaces: &["web-dp1"],
     },
     &VideoOutput {
         output: "DP-2",
-        workspaces: &["Games", "Web-DP2"],
+        workspaces: &["games", "web-dp2"],
     },
     &VideoOutput {
         output: "DP-3",
-        workspaces: &["Utils", "Chat", "Web-DP3"],
+        workspaces: &["utils", "chat", "web-dp3"],
     },
 ];
 const TV_VIDEO_OUTPUT: VideoOutput = VideoOutput {
     output: "HDMI-A-1",
-    workspaces: &[
-        "VR", "Games", "Utils", "Chat", "Web-DP1", "Web-DP2", "Web-DP3",
-    ],
+    workspaces: &["games", "utils", "chat", "web-dp1", "web-dp2", "web-dp3"],
 };
 
-const DESKTOP_AUDIO_SINK: &str = "alsa_output.pci-0000_09_00.4.analog-stereo";
+const DESKTOP_AUDIO_SINK: &str = "alsa_output.pci-0000_0a_00.4.analog-stereo";
 const TV_AUDIO_SINK: &str = "alsa_output.pci-0000_07_00.1.hdmi-stereo";
 const TV_SCALE: &str = "2.0";
 
 macro_rules! cmd {
     ( $( $arg:expr ),* ) => {
-        Command::new("bash").arg("-c").arg(format!($($arg,)*)).output().unwrap()
+        Command::new("sh").arg("-c").arg(format!($($arg,)*)).output().unwrap()
     };
 }
 
