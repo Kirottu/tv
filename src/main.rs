@@ -73,7 +73,8 @@ struct State {
 impl State {
     fn load() -> Self {
         if !fs::exists(STATE_FILE_PATH).unwrap() {
-            Self::init()
+            Self::init();
+            return Self::default();
         }
 
         let string = fs::read_to_string(STATE_FILE_PATH).unwrap();
@@ -105,11 +106,16 @@ impl State {
     }
 
     fn init() {
+        Self::default().save()
+    }
+}
+
+impl Default for State {
+    fn default() -> Self {
         Self {
             tv: false,
             scaled: true,
         }
-        .save()
     }
 }
 
