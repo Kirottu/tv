@@ -12,7 +12,7 @@ const STATE_FILE_PATH: &str = "/tmp/tv.state";
 const DESKTOP_VIDEO_OUTPUTS: &[&VideoOutput] = &[
     &VideoOutput {
         output: "DP-1",
-        workspaces: &["web-dp1"],
+        workspaces: &["vr", "web-dp1"],
     },
     &VideoOutput {
         output: "DP-2",
@@ -25,7 +25,9 @@ const DESKTOP_VIDEO_OUTPUTS: &[&VideoOutput] = &[
 ];
 const TV_VIDEO_OUTPUT: VideoOutput = VideoOutput {
     output: "HDMI-A-1",
-    workspaces: &["games", "utils", "chat", "web-dp1", "web-dp2", "web-dp3"],
+    workspaces: &[
+        "vr", "games", "utils", "chat", "web-dp1", "web-dp2", "web-dp3",
+    ],
 };
 
 const DESKTOP_AUDIO_SINK: &str = "alsa_output.pci-0000_0a_00.4.analog-stereo";
