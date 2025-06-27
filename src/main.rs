@@ -20,14 +20,12 @@ const DESKTOP_VIDEO_OUTPUTS: &[&VideoOutput] = &[
     },
     &VideoOutput {
         output: "DP-3",
-        workspaces: &["utils", "chat", "web-dp3"],
+        workspaces: &["chat", "web-dp3"],
     },
 ];
 const TV_VIDEO_OUTPUT: VideoOutput = VideoOutput {
     output: "HDMI-A-1",
-    workspaces: &[
-        "vr", "games", "utils", "chat", "web-dp1", "web-dp2", "web-dp3",
-    ],
+    workspaces: &["vr", "games", "chat", "web-dp1", "web-dp2", "web-dp3"],
 };
 
 const DESKTOP_AUDIO_SINK: &str = "alsa_output.pci-0000_0a_00.4.analog-stereo";
